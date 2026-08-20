@@ -1,0 +1,47 @@
+#include<iostream>
+using namespace std;
+struct Node{
+    int data;
+    Node *next;
+};
+int main()
+{
+    Node *first=new Node;
+    Node *second=new Node;
+    Node *third=new Node;
+    Node *fourth=new Node;
+    
+    first->data=10;
+    second->data=20;
+    third->data=30;
+    fourth->data=40;
+    
+    first->next=second;
+    second->next=third;
+    third->next=fourth;
+    fourth->next=nullptr;
+    int element;
+    cout<<"enter element to be found:";
+    cin>>element;
+    
+    Node *head=first;
+    Node *temp=head;
+    bool found=false;
+    while(temp!=nullptr)
+    {
+        if(temp->data==element)
+        {
+            found=true;
+            break;
+        }
+        temp=temp->next;
+    }
+    if(found)
+    {
+        cout<<"found";
+    }
+    else
+    {
+        cout<<"not found";
+    }
+}
